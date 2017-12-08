@@ -1,0 +1,8 @@
+---
+-  hosts: ansi-01
+   remote_user: root
+
+   tasks:
+      - name: Reboot machine
+        command: /sbin/shutdown -r now
+        sudo: yes

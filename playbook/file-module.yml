@@ -1,0 +1,8 @@
+---
+- hosts: test-server
+  remote_user: root
+
+  tasks:
+    - name: Ensure httpd conf has right permissions and owner/group
+      file: path=/etc/httpd/conf/httpd.conf owner=root group=root mode=0644
+      sudo: yes

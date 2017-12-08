@@ -1,0 +1,9 @@
+[application]
+ansi-01 ansible_ssh_host=10.1.0.3
+[db]
+ansi-02 ansible_ssh_host=10.1.0.4
+[web-server]
+ansi-03 ansible_ssh_host=10.1.0.5
+[eastcoast:children]
+application
+db

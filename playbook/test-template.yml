@@ -1,0 +1,7 @@
+---
+- hosts: ansi-01
+  remote_user: root
+
+  tasks:
+     - name: Create a test template
+       template: src=test dest=/tmp/testfile mode=644

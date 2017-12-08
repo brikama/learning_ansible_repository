@@ -1,0 +1,5 @@
+[test-server]
+ansi-01 ansible_ssh_host=10.1.0.3
+ansi-02 ansible_ssh_host=10.1.0.4
+ansi-03 ansible_ssh_host=10.1.0.5
+

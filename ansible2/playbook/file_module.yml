@@ -1,0 +1,8 @@
+---
+- hosts: ansi-01
+  remote_user: root
+
+  tasks:
+    - name: Create a symlink in /tmp for httpd.conf
+      file: src=/etc/httpd/conf/httpd.conf dest=/tmp/httpd.conf owner=root group=root state=link
+      sudo: yes

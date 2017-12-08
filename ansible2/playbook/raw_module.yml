@@ -1,0 +1,8 @@
+---
+- hosts: test-server
+  remote_user: ansi
+
+  tasks:
+    - name: Install vim
+      raw: yum -y install vim-common
+      sudo: yes

@@ -1,0 +1,7 @@
+---
+- hosts: all
+  remote_user: root
+
+  tasks:
+    - yum: name=git state=installed
+      sudo: yes

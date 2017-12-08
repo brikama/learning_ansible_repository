@@ -1,0 +1,14 @@
+---
+- hosts: ansi-01
+  remote_user: ansi
+
+  tasks:
+    - name: List files in /tmp and redirect to a file
+      shell: /bin/ls -l /tmp > /tmp/list
+      sudo: yes
+
+    - name: Cat /tmp/list
+      shell: /bin/cat /tmp/list
+
+    - name: Show debug works
+      debug: msg={{ ansible_distribution }}

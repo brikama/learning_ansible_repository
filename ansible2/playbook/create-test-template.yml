@@ -1,0 +1,14 @@
+---
+- hosts: ansi-01
+  gather_facts: False
+  remote_user: root
+
+  tasks:
+    - name: Create a test template
+      template: src=test dest=/tmp/testfile mode=644
+
+    - name: Show how debug works
+      debug: msg={{ ansible_host }}
+
+#      file: path=/tmp/dir1/dir2/dir3 owner=root group=root mode=0777 state=directory
+      sudo: yes

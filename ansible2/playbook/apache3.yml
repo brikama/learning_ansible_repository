@@ -1,0 +1,16 @@
+---
+- hosts: "{{ nodes }}"
+  remote_user: root
+
+  vars:
+    - package_name: "httpd"
+
+  tasks:
+    - name: Show how debug works
+      debug: msg={{ ansible_distribution }}
+  
+    - include: install_apache.yml
+
+    - name: Check apache service
+      service: name={{ package_name }} state=running
+      sudo: yes

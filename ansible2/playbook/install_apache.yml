@@ -1,0 +1,23 @@
+- name: Show how debug works
+  debug: msg={{ ansible_distribution }}
+
+- name: Install http package
+  yum: name=httpd state=latest
+  sudo: yes
+
+#- name: Install apache2  package
+#  yum: name=apache2 state=latest
+#  sudo: yes
+
+
+- set_fact: package_name=httpd
+  when: ansible_os_family == "Redhat"
+
+#- set_fact: package_name=apache2
+#  when: ansible_os_family == "Debian"
+
+
+#- name: Starting httpd service
+#  service: name=httpd state=started
+# sudo: yes
+

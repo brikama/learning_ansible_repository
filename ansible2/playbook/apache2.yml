@@ -1,0 +1,16 @@
+---
+- hosts: test-server
+  remote_user: ansi
+#  vars_files:
+#    - /home/centos7vm/playbook/var1.yml
+#    - /home/centos7vm/playbook/var2.yml
+#    - /home/centos7vm/playbook/var3.yml
+
+  vars:
+    - package_name: "httpd"
+
+
+  tasks:
+    - name: Check apache service
+      service: name={{ package_name }} state=running
+      sudo: yes

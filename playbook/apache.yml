@@ -1,0 +1,13 @@
+---
+- hosts: test-server
+  remote_user: ansi
+
+  vars:
+    - package_name: "httpd"
+
+  tasks:
+    - include: install_apache.yml
+
+    - name: Check apache service
+      service: name={{ package_name }} state=started
+      sudo: yes

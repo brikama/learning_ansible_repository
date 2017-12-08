@@ -1,0 +1,8 @@
+---
+- hosts: ansi-01
+  remote_user: ansi
+
+  tasks:
+    - name: Copy file remotely
+      copy: src=test2.conf dest=/etc/test2.conf owner=root group=root mode=0644
+      sudo: yes
